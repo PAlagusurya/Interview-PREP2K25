@@ -1,0 +1,6 @@
+/* All the elements inside the body should have these styles */
+body * {
+  margin: 20px;
+  padding: 20px;
+  border: 5px solid green;
+}
