@@ -36,15 +36,47 @@ two.print();
 
 // Output 2:
 
-function Person(name) {
+function Person1(name) {
   this.name = name;
 }
 
-Person.prototype.getName = () => {
+Person1.prototype.getName = () => {
   return this.name;
 };
 
-const surya = new Person("surya");
+const surya = new Person1("surya");
 console.log(surya.getName());
 
 //It takes the value of the property name on the global object because they take the context of where they are defined
+
+//Output 3:
+
+function parseData(data) {
+  return data;
+}
+
+class User {
+  constructor(name, data) {
+    const parsedData = parseData(data);
+
+    this.name = name;
+    this.data = parsedData;
+
+    return parsedData;
+  }
+
+  getData() {
+    return this.data;
+  }
+}
+
+const suryaa = new User("surya", {
+  work: "Software Engineer",
+  shouldConnect: true,
+});
+
+console.log("SUEYA:", suryaa);
+
+console.log(suryaa.getData());
+
+//TypeError: suryaa.getData is not a function
